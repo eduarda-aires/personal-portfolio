@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import CatHover from "./catHover";
+import MusicButton from "./musicButton";
+
 
 export default function PortfolioPage() {
   return (
@@ -11,6 +13,13 @@ export default function PortfolioPage() {
   <div className="fixed top-5 right-5 group cursor-pointer">
     <CatHover />
   </div>
+
+  {/* Music Control Button */}
+  <div className="fixed top-5 left-5">
+    {/* @ts-ignore */}
+    <MusicButton />
+  </div>
+  
 
     {/* Hero Section */}
     <section className="flex flex-col items-center justify-center h-screen text-center px-6">
