@@ -26,40 +26,43 @@ export default function PortfolioPage() {
     <DarkModeToggle />
   </div>
 
-    {/* Hero Section */}
-    <section className="flex flex-col items-center justify-center h-screen text-center px-6">
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        className="max-w-md mx-auto bg-white/80 rounded-2xl p-8 shadow-lg text-center"
-      >
-        <h1 className="text-4xl font-bold text-purple-950/50">Hi, I'm Aires</h1>
-        <p className="mt-2 text-gray-600">Frontend developer & cat enthusiast 🐈</p>
-      </motion.div>
+  {/* Hero Section */}
+  <section className="flex flex-col items-center justify-center h-screen text-center px-6">
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2, duration: 0.8 }}
+      whileHover={{ scale: 1.03 }}
+      className="max-w-md mx-auto bg-white/80 rounded-2xl p-8 shadow-lg text-center"
+    >
+      <h1 className="text-4xl font-bold text-purple-950/50">Hi, I'm Aires</h1>
+      <p className="mt-2 text-gray-600">Frontend developer & cat enthusiast 🐈</p>
+    </motion.div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.8 }}
-        className="mt-4 max-w-xl text-violet-950/80 text-lg"
-      >
-        A cozy developer who loves crafting cute & creative web experiences 🌸
-      </motion.p>
+    <motion.p
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.6, duration: 0.8 }}
+      className="mt-4 max-w-xl text-violet-950/80 text-lg"
+    >
+      A cozy developer who loves crafting cute & creative web experiences 🌸
+    </motion.p>
+  </section>
+
+    {/* About Section */}
+    <section className="py-20 px-6 bg-white/60">
+      <div className="max-w-3xl mx-auto text-center">
+        <h2 className="text-3xl font-semibold text-pink-700">About Me</h2>
+        <p className="mt-4 text-gray-700">
+          I'm an aspiring Software Developer with a passion for front-end development,
+          particularly in creating interactive user experiences. 
+          I'm currently expanding my skillset in React through personal projects that align with my interests!
+        </p>
+        <p className="mt-4 text-gray-700">
+          When I'm not coding, you can find me exploring new boba cafes, petting my cats, or indulging in my favorite games. 🎮
+        </p>
+      </div>
     </section>
-
-      {/* About Section */}
-      <section className="py-20 px-6 bg-white/60">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-pink-700">About Me</h2>
-          <p className="mt-4 text-gray-700">
-            I'm an aspiring Software Developer with a passion for front-end development,
-            particularly in creating interactive user experiences. 
-            I'm currently expanding my skillset in React through personal projects that align with my interests!
-          </p>
-          <p className="mt-4 text-gray-700">
-            When I'm not coding, you can find me exploring new boba cafes, petting my cats, or indulging in my favorite games. 🎮
-          </p>
-        </div>
-      </section>
 
       {/* Skills Section */}
       <section className="py-20 px-6">
