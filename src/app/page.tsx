@@ -1,103 +1,123 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import { motion } from "framer-motion";
+import CatHover from "./catHover";
+
+export default function PortfolioPage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-gradient-to-b from-pink-50 via-purple-50 to-blue-50 text-gray-800 relative">
+  {/* Floating Cat */}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+  <div className="fixed top-5 right-5 group cursor-pointer">
+    <CatHover />
+  </div>
+
+    {/* Hero Section */}
+    <section className="flex flex-col items-center justify-center h-screen text-center px-6">
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        className="max-w-md mx-auto bg-white/80 rounded-2xl p-8 shadow-lg text-center"
+      >
+        <h1 className="text-4xl font-bold text-purple-950/50">Hi, I'm Aires</h1>
+        <p className="mt-2 text-gray-600">Frontend developer & cat enthusiast 🐈</p>
+      </motion.div>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.4, duration: 0.8 }}
+        className="mt-4 max-w-xl text-violet-950/80 text-lg"
+      >
+        A cozy developer who loves crafting cute & creative web experiences 🌸
+      </motion.p>
+    </section>
+
+      {/* About Section */}
+      <section className="py-20 px-6 bg-white/60">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-semibold text-pink-700">About Me</h2>
+          <p className="mt-4 text-gray-700">
+            I'm an aspiring Software Developer with a passion for front-end development,
+            particularly in creating interactive user experiences. 
+            I'm currently expanding my skillset in React through personal projects that align with my interests!
+          </p>
+          <p className="mt-4 text-gray-700">
+            When I'm not coding, you can find me exploring new boba cafes, petting my cats, or indulging in my favorite games. 🎮
+          </p>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-semibold text-purple-700">Skills</h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {['React', 'HTML', 'CSS', 'Tailwind'].map((skill) => (
+              <motion.div
+                key={skill}
+                whileHover={{ scale: 1.05 }}
+                className="rounded-2xl bg-purple-50/70 p-6 shadow-md shadow-purple-200 text-center"
+              >
+                <h3 className="text-xl font-semibold text-purple-800">{skill}</h3>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-semibold text-purple-700">Projects</h2>
+          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {[1, 2, 3].map((project) => (
+              <motion.div
+                key={project}
+                whileHover={{ scale: 1.05 }}
+                className="rounded-2xl bg-pink-50 p-6 shadow-md shadow-pink-200 text-left"
+              >
+                <h3 className="text-xl font-semibold text-pink-800">
+                  🌸 Project {project}
+                </h3>
+                <p className="mt-2 text-pink-700">
+                  A cozy little project description goes here.
+                </p>
+                <button className="mt-4 rounded-xl bg-pink-300 px-4 py-2 text-sm font-medium text-pink-900 hover:bg-pink-400 transition">
+                  View Project
+                </button>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-6 bg-white/70 text-center">
+        <h2 className="text-3xl font-semibold text-purple-700">Let’s Connect!</h2>
+        <p className="mt-4 text-gray-700">
+          I’d love to chat over a virtual coffee ☕. Reach out to me via email
+          or socials!
+        </p>
+        <div className="mt-6 flex justify-center gap-4">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:your@email.com"
+            className="rounded-xl bg-purple-300 px-4 py-2 font-medium text-purple-900 hover:bg-purple-400 transition"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Email Me
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#"
+            className="rounded-xl bg-pink-300 px-4 py-2 font-medium text-pink-900 hover:bg-pink-400 transition"
           >
-            Read our docs
+            Twitter
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-6 text-center text-sm text-gray-500">
+        © {new Date().getFullYear()} aires. Made with 💜
       </footer>
-    </div>
+    </main>
   );
 }
