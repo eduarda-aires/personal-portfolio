@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import CatHover from "./catHover";
 import MusicButton from "./musicButton";
+import DarkModeToggle from "./nightMode";
 
 
 export default function PortfolioPage() {
@@ -19,7 +20,11 @@ export default function PortfolioPage() {
     {/* @ts-ignore */}
     <MusicButton />
   </div>
-  
+
+  {/* Dark Mode Toggle */}
+  <div className="fixed top-5 left-20">
+    <DarkModeToggle />
+  </div>
 
     {/* Hero Section */}
     <section className="flex flex-col items-center justify-center h-screen text-center px-6">

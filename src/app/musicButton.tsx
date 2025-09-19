@@ -26,7 +26,7 @@ export default function MusicButton() {
   return (
     <button
     onClick={togglePlay}
-    className="fixed top-5 left-5 p-2"
+    className="fixed top-5 left-20 p-2"
     >
     <motion.img
         src={hovered ? "/music-on.svg" : "/music-off.svg"}
