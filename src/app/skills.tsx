@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 
 const skills = [
+  { name: "Git", logo: "/logos/github.svg" },
   { name: "React", logo: "/logos/react.svg" },
   { name: "HTML", logo: "/logos/html.svg" },
   { name: "CSS", logo: "/logos/css.svg" },
@@ -15,7 +16,6 @@ const skills = [
   { name: "Java", logo: "/logos/java.svg" },
   { name: "Dart", logo: "/logos/dart.svg" },
   { name: "Flutter", logo: "/logos/flutter.svg" },
-  { name: "Git", logo: "/logos/github.svg" },
 ];
 
 export default function LogoLoop() {
@@ -25,38 +25,38 @@ export default function LogoLoop() {
 
       {/* Logo loop */}
       <div className="relative overflow-hidden py-10">
-  <motion.div
-    animate={{ x: ["0%", "-50%"] }}
-    transition={{
-      repeat: Infinity,
-      duration: 20,
-      ease: "linear",
-    }}
-    className="flex gap-20"
-  >
-    {[...skills, ...skills, ...skills].map((skill, i) => (
-      <motion.div
-        key={i}
-        className="group h-20 w-20 flex flex-col items-center justify-center rounded-full bg-purple-100/80 shadow-md shadow-purple-200 flex-shrink-0 mx-auto relative"
-        animate={{ y: [0, -5, 0], rotate: [0, -1, 0] }}
-        transition={{
-          repeat: Infinity,
-          duration: 3 + (i % skills.length) * 0.3,
-          ease: "easeInOut",
-        }}
-      >
-        <img src={skill.logo} alt={skill.name} className="h-12 w-12 object-contain" />
-        <span className="absolute -bottom-8 text-sm text-purple-900/50 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-          {skill.name}
-        </span>
-      </motion.div>
-    ))}
-  </motion.div>
+        <motion.div
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 40, // Slower duration for smoother loop
+            ease: "linear",
+          }}
+          className="flex gap-20"
+        >
+          {[...skills, ...skills].map((skill, i) => ( // Only duplicate once instead of three times
+            <motion.div
+              key={i}
+              className="group h-30 w-30 flex flex-col items-center justify-center rounded-full bg-white shadow-md shadow-purple-200 flex-shrink-0 mx-auto relative"
+              animate={{ y: [0, -5, 0], rotate: [0, -1, 0] }}
+              transition={{
+                repeat: Infinity,
+                duration: 3 + (i % skills.length) * 0.3,
+                ease: "easeInOut",
+              }}
+            >
+              <img src={skill.logo} alt={skill.name} className="h-12 w-12 object-contain scale-130 filter brightness-90 contrast-100 opacity-90" />
+              <span className="absolute -bottom-8 text-sm text-purple-900/50 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                {skill.name}
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
 
-  {/* Fade edges */}
-  <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-purple-50 z-20 pointer-events-none" />
-  <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-purple-50 z-20 pointer-events-none" />
-</div>
+        {/* Fade edges - make them wider for better coverage */}
+        <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-purple-50 to-transparent z-20 pointer-events-none" />
+        <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-purple-50 to-transparent z-20 pointer-events-none" />
+      </div>
     </div>
   );
 }
