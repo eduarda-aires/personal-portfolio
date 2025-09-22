@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import CatHover from "./catHover";
 import MusicButton from "./musicButton";
 import DarkModeToggle from "./nightMode";
+import SkillsSection from "./skills";
 
 
 export default function PortfolioPage() {
@@ -65,22 +66,29 @@ export default function PortfolioPage() {
     </section>
 
       {/* Skills Section */}
-      <section className="py-20 px-6">
+      <SkillsSection />
+      {/* <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-semibold text-purple-700">Skills</h2>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {['React', 'HTML', 'CSS', 'Tailwind'].map((skill) => (
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {['React', 'HTML', 'CSS', 'Tailwind', 'Javascript', 'TypeScript', 'Next.js', 'Node.js', 'Python', 'Java', 'Dart', 'Flutter'].map((skill, i) => (
               <motion.div
                 key={skill}
-                whileHover={{ scale: 1.05 }}
-                className="rounded-2xl bg-purple-50/70 p-6 shadow-md shadow-purple-200 text-center"
+                whileHover={{ scale: 1.1 }}
+                animate={{ y: [0, -15, 0] }}
+                transition={{
+                  duration: 3 + i, // stagger a little so they don't all move the same
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                className="rounded-full bg-purple-100/80 p-2 shadow-md shadow-purple-200 text-center"
               >
-                <h3 className="text-xl font-semibold text-purple-800">{skill}</h3>
+                <h3 className="text-lg font-semibold text-purple-700">{skill}</h3>
               </motion.div>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Projects Section */}
       <section className="py-20 px-6">
