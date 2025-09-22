@@ -5,6 +5,7 @@ import CatHover from "./catHover";
 import MusicButton from "./musicButton";
 import DarkModeToggle from "./nightMode";
 import SkillsSection from "./skills";
+import AboutSection from "./aboutme";
 
 
 export default function PortfolioPage() {
@@ -51,19 +52,7 @@ export default function PortfolioPage() {
   </section>
 
     {/* About Section */}
-    <section className="py-20 px-6 bg-white/60">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-semibold text-pink-700">About Me</h2>
-        <p className="mt-4 text-gray-700">
-          I'm an aspiring Software Developer with a passion for front-end development,
-          particularly in creating interactive user experiences. 
-          I'm currently expanding my skillset in React through personal projects that align with my interests!
-        </p>
-        <p className="mt-4 text-gray-700">
-          When I'm not coding, you can find me exploring new boba cafes, petting my cats, or indulging in my favorite games. 🎮
-        </p>
-      </div>
-    </section>
+      <AboutSection />
 
       {/* Skills Section */}
       <SkillsSection />
