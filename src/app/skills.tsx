@@ -23,6 +23,7 @@ export default function LogoLoop() {
     <div className="overflow-hidden whitespace-nowrap py-10 bg-purple-50 text-center relative">
       <h2 className="text-3xl font-semibold text-purple-900/70 mb-6">Skills</h2>
 
+      {/* Logo loop */}
       <motion.div
         animate={{ x: ["0%", "-50%"] }}
         transition={{
@@ -33,9 +34,18 @@ export default function LogoLoop() {
         className="flex gap-20"
       >
         {[...skills, ...skills, ...skills].map((skill, i) => (
-          <div
+          <motion.div
             key={i}
             className="group h-20 w-20 flex flex-col items-center justify-center rounded-full bg-purple-100/80 shadow-md shadow-purple-200 flex-shrink-0 mx-auto relative"
+            animate={{
+              y: [0, -5, 0], // bubble float :3 subtle
+              rotate: [0, -1, 0], // subtle rotation
+            }} 
+            transition={{
+              repeat: Infinity,
+              duration: 3 + (i % skills.length) * 0.3, // staggered duration for each bubble
+              ease: "easeInOut",
+            }}
           >
             <img
               src={skill.logo}
@@ -43,12 +53,16 @@ export default function LogoLoop() {
               className="h-12 w-12 object-contain"
             />
             {/* Hover label */}
-            <span className="absolute -bottom-8 text-sm text-purple-700/50 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+            <span className="absolute -bottom-8 text-sm text-purple-900/50 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
               {skill.name}
             </span>
-          </div>
+          </motion.div>
         ))}
       </motion.div>
+
+      {/* Soft fade edges on top of content */}
+    <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-purple-50 z-20 pointer-events-none" />
+    <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-purple-50 z-20 pointer-events-none" />
     </div>
   );
 }
