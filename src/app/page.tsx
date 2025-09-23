@@ -20,13 +20,12 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-pink-50 via-purple-50 to-blue-50 text-gray-800 relative">
+    <main className="snap-y snap-mandatory h-screen overflow-y-scroll bg-gradient-to-b from-pink-50 via-purple-50 to-blue-50 text-gray-800 relative">
       
     {/* Scroll Spy */}
     <ScrollSpy sections={sections} />
 
     {/* Floating Cat */}
-
     <div className="fixed top-5 right-5 group cursor-pointer">
       <CatHover />
     </div>
@@ -43,7 +42,7 @@ export default function PortfolioPage() {
     </div>
 
     {/* Hero Section */}
-    <section id="hero" className="flex flex-col items-center justify-center h-screen text-center px-6">
+    <section id="hero" className="snap-start flex flex-col items-center justify-center h-screen text-center px-6">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -66,17 +65,17 @@ export default function PortfolioPage() {
     </section>
 
     {/* About Section */}
-    <section id="about">
+    <section id="about" className="snap-start h-screen flex items-center justify-center">
     <AboutSection />
     </section>
 
     {/* Skills Section */}
-    <section id="skills">
+    <section id="skills" className="snap-start h-screen">
     <SkillsSection />
     </section>
 
     {/* Projects Section */}
-    <section id="projects" className="py-20 px-6">
+    <section id="projects" className="snap-start h-screen flex items-center justify-center">
       <div className="max-w-5xl mx-auto text-center">
         <h2 className="text-3xl font-semibold text-purple-700">Projects</h2>
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -102,7 +101,7 @@ export default function PortfolioPage() {
     </section>
 
       {/* Contact Section */}
-      <section className="py-20 px-6 bg-white/70 text-center">
+      <section id="contact" className="py-20 px-6 bg-white/70 text-center">
         <h2 className="text-3xl font-semibold text-purple-700">Let’s Connect!</h2>
         <p className="mt-4 text-gray-700">
           I’d love to chat over a virtual coffee ☕. Reach out to me via email

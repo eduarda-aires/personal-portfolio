@@ -20,11 +20,13 @@ const skills = [
 
 export default function LogoLoop() {
   return (
-    <div className="min-h-screen whitespace-nowrap py-10 bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50 text-center">
-      <h2 className="text-3xl font-semibold text-purple-900/70 mb-6">Skills</h2>
+    <div className="flex flex-col items-center justify-center min-h-screen whitespace-nowrap py-10 bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50 text-center">
+      <h2 className="text-3xl font-semibold text-center text-purple-950/70 mb-6">
+        Skills & Technologies
+      </h2>
 
       {/* Logo loop */}
-      <div className="relative overflow-hidden py-10">
+      <div className="relative w-full overflow-hidden py-10">
         <motion.div
           animate={{ x: ["0%", "-100%"] }}
           transition={{
@@ -32,7 +34,7 @@ export default function LogoLoop() {
             duration: 40, // Slower duration for smoother loop
             ease: "linear",
           }}
-          className="flex gap-20"
+          className="flex gap-20 justify-center items-center"
         >
           {[...skills, ...skills].map((skill, i) => ( // Only duplicate once instead of three times
             <motion.div
@@ -53,7 +55,7 @@ export default function LogoLoop() {
           ))}
         </motion.div>
 
-        {/* Fade edges - make them wider for better coverage */}
+        {/* Fade edges*/}
         <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-purple-50 to-transparent z-20 pointer-events-none" />
         <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-purple-50 to-transparent z-20 pointer-events-none" />
       </div>
