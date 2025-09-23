@@ -16,7 +16,10 @@ export default function CatHover() {
         transition={{ repeat: Infinity, duration: 2 }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onClick={() => {
+          const el = document.getElementById("hero"); // or first section id
+          el?.scrollIntoView({ behavior: "smooth" });
+        }}
       />
       <span className="absolute right-5 w-max px-3 py-1 rounded-lg bg-pink-100 text-sm text-purple-950/50 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
         Pet me to go back up! Meow~

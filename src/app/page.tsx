@@ -77,7 +77,7 @@ export default function PortfolioPage() {
     {/* Projects Section */}
     <section id="projects" className="snap-start h-screen flex items-center justify-center">
       <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-semibold text-purple-700">Projects</h2>
+        <h2 className="text-3xl font-semibold text-purple-950/50">Projects</h2>
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {[1, 2, 3].map((project) => (
             <motion.div

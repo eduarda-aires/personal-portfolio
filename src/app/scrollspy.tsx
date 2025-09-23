@@ -46,8 +46,8 @@ export default function ScrollSpy({ sections }: ScrollSpyProps) {
           onClick={() => scrollToSection(section.id)}
           className={`h-3 w-3 rounded-full transition-all ${
             activeSection === section.id
-              ? "bg-purple-600 scale-125"
-              : "bg-purple-300 hover:bg-purple-400"
+              ? "bg-pink-950/50 scale-125"
+              : "bg-purple-800/30 hover:bg-pink-800/50 hover:scale-110"
           }`}
         >
           <span className="sr-only">{section.label}</span>

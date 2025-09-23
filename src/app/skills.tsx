@@ -21,7 +21,7 @@ const skills = [
 export default function LogoLoop() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen whitespace-nowrap py-10 bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50 text-center">
-      <h2 className="text-3xl font-semibold text-center text-purple-950/70 mb-6">
+      <h2 className="text-3xl font-semibold text-center text-purple-950/50 mb-6">
         Skills & Technologies
       </h2>
 
