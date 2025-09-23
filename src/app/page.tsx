@@ -7,6 +7,7 @@ import DarkModeToggle from "./nightMode";
 import SkillsSection from "./skills";
 import AboutSection from "./aboutme";
 import ScrollSpy from "./scrollspy";
+import ProjectsSection from "./projects";
 
 
 export default function PortfolioPage() {
@@ -76,28 +77,7 @@ export default function PortfolioPage() {
 
     {/* Projects Section */}
     <section id="projects" className="snap-start h-screen flex items-center justify-center">
-      <div className="max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-semibold text-purple-950/50">Projects</h2>
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {[1, 2, 3].map((project) => (
-            <motion.div
-              key={project}
-              whileHover={{ scale: 1.05 }}
-              className="rounded-2xl bg-pink-50 p-6 shadow-md shadow-pink-200 text-left"
-            >
-              <h3 className="text-xl font-semibold text-pink-800">
-                🌸 Project {project}
-              </h3>
-              <p className="mt-2 text-pink-700">
-                A cozy little project description goes here.
-              </p>
-              <button className="mt-4 rounded-xl bg-pink-300 px-4 py-2 text-sm font-medium text-pink-900 hover:bg-pink-400 transition">
-                View Project
-              </button>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+    <ProjectsSection/>
     </section>
 
       {/* Contact Section */}
