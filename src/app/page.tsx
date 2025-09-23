@@ -20,7 +20,7 @@ export default function PortfolioPage() {
   ];
 
   return (
-    <main className="snap-y snap-mandatory h-screen overflow-y-scroll bg-gradient-to-b from-pink-50 via-purple-50 to-blue-50 text-gray-800 relative">
+    <main className="overflow-scroll [scrollbar-width:none] [&::-webkit-scrollbar]:hidden snap-y snap-mandatory h-screen overflow-y-scroll bg-gradient-to-b from-pink-50 via-purple-50 to-blue-50 text-gray-800 relative">
       
     {/* Scroll Spy */}
     <ScrollSpy sections={sections} />
