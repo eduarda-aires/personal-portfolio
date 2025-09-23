@@ -6,104 +6,100 @@ import MusicButton from "./musicButton";
 import DarkModeToggle from "./nightMode";
 import SkillsSection from "./skills";
 import AboutSection from "./aboutme";
+import ScrollSpy from "./scrollspy";
 
 
 export default function PortfolioPage() {
+  const sections = [
+    { id: "hero", label: "Hero" },
+    { id: "about", label: "About Me" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    //{ id: "education", label: "Education & Experience" },
+    { id: "contact", label: "Contact" },
+  ];
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-pink-50 via-purple-50 to-blue-50 text-gray-800 relative">
-  {/* Floating Cat */}
+      
+    {/* Scroll Spy */}
+    <ScrollSpy sections={sections} />
 
-  <div className="fixed top-5 right-5 group cursor-pointer">
-    <CatHover />
-  </div>
+    {/* Floating Cat */}
 
-  {/* Music Control Button */}
-  <div className="fixed top-5 left-5">
-    {/* @ts-ignore */}
-    <MusicButton />
-  </div>
+    <div className="fixed top-5 right-5 group cursor-pointer">
+      <CatHover />
+    </div>
 
-  {/* Dark Mode Toggle */}
-  <div className="fixed top-5 left-20">
-    <DarkModeToggle />
-  </div>
+    {/* Music Control Button */}
+    <div className="fixed top-5 left-5">
+      {/* @ts-ignore */}
+      <MusicButton />
+    </div>
 
-  {/* Hero Section */}
-  <section className="flex flex-col items-center justify-center h-screen text-center px-6">
-    <motion.div
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2, duration: 0.8 }}
-      whileHover={{ scale: 1.03 }}
-      className="max-w-md mx-auto bg-white/80 rounded-2xl p-8 shadow-lg text-center"
-    >
-      <h1 className="text-4xl font-bold text-purple-950/50">Hi, I'm Aires</h1>
-      <p className="mt-2 text-gray-600">Frontend developer & cat enthusiast 🐈</p>
-    </motion.div>
+    {/* Dark Mode Toggle */}
+    <div className="fixed top-5 left-20">
+      <DarkModeToggle />
+    </div>
 
-    <motion.p
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.6, duration: 0.8 }}
-      className="mt-4 max-w-xl text-violet-950/80 text-lg"
-    >
-      A cozy developer who loves crafting cute & creative web experiences 🌸
-    </motion.p>
-  </section>
+    {/* Hero Section */}
+    <section id="hero" className="flex flex-col items-center justify-center h-screen text-center px-6">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.2, duration: 0.8 }}
+        whileHover={{ scale: 1.03 }}
+        className="max-w-md mx-auto bg-white/80 rounded-2xl p-8 shadow-lg text-center"
+      >
+        <h1 className="text-4xl font-bold text-purple-950/50">Hi, I'm Aires</h1>
+        <p className="mt-2 text-gray-600">Frontend developer & cat enthusiast 🐈</p>
+      </motion.div>
+
+      <motion.p
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+        className="mt-4 max-w-xl text-violet-950/80 text-lg"
+      >
+        A cozy developer who loves crafting cute & creative web experiences 🌸
+      </motion.p>
+    </section>
 
     {/* About Section */}
-      <AboutSection />
+    <section id="about">
+    <AboutSection />
+    </section>
 
-      {/* Skills Section */}
-      <SkillsSection />
-      {/* <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-purple-700">Skills</h2>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {['React', 'HTML', 'CSS', 'Tailwind', 'Javascript', 'TypeScript', 'Next.js', 'Node.js', 'Python', 'Java', 'Dart', 'Flutter'].map((skill, i) => (
-              <motion.div
-                key={skill}
-                whileHover={{ scale: 1.1 }}
-                animate={{ y: [0, -15, 0] }}
-                transition={{
-                  duration: 3 + i, // stagger a little so they don't all move the same
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="rounded-full bg-purple-100/80 p-2 shadow-md shadow-purple-200 text-center"
-              >
-                <h3 className="text-lg font-semibold text-purple-700">{skill}</h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
+    {/* Skills Section */}
+    <section id="skills">
+    <SkillsSection />
+    </section>
 
-      {/* Projects Section */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-purple-700">Projects</h2>
-          <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((project) => (
-              <motion.div
-                key={project}
-                whileHover={{ scale: 1.05 }}
-                className="rounded-2xl bg-pink-50 p-6 shadow-md shadow-pink-200 text-left"
-              >
-                <h3 className="text-xl font-semibold text-pink-800">
-                  🌸 Project {project}
-                </h3>
-                <p className="mt-2 text-pink-700">
-                  A cozy little project description goes here.
-                </p>
-                <button className="mt-4 rounded-xl bg-pink-300 px-4 py-2 text-sm font-medium text-pink-900 hover:bg-pink-400 transition">
-                  View Project
-                </button>
-              </motion.div>
-            ))}
-          </div>
+    {/* Projects Section */}
+    <section id="projects" className="py-20 px-6">
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className="text-3xl font-semibold text-purple-700">Projects</h2>
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {[1, 2, 3].map((project) => (
+            <motion.div
+              key={project}
+              whileHover={{ scale: 1.05 }}
+              className="rounded-2xl bg-pink-50 p-6 shadow-md shadow-pink-200 text-left"
+            >
+              <h3 className="text-xl font-semibold text-pink-800">
+                🌸 Project {project}
+              </h3>
+              <p className="mt-2 text-pink-700">
+                A cozy little project description goes here.
+              </p>
+              <button className="mt-4 rounded-xl bg-pink-300 px-4 py-2 text-sm font-medium text-pink-900 hover:bg-pink-400 transition">
+                View Project
+              </button>
+            </motion.div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Contact Section */}
       <section className="py-20 px-6 bg-white/70 text-center">
