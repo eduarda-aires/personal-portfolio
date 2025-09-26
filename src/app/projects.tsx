@@ -43,7 +43,7 @@ export default function ProjectsSection() {
               <h3 className="text-xl font-semibold text-pink-950/80">{project.title}</h3>
               <p className="mt-2 text-pink-900/80">{project.description}</p>
               <h4 className="mt-4 text-sm text-pink-700/60 italic">Technologies used:</h4>
-              <p className="text-sm text-pink-700/60">{project.technologies}</p>
+              <p className="text-sm text-pink-700/60 font-semibold">{project.technologies}</p>
 
               {/* Buttons */}
               <div className="flex gap-2 mt-4 justify-start">
@@ -76,7 +76,7 @@ export default function ProjectsSection() {
                                      bg-green-950/50 text-white text-xs rounded py-1 px-2 
                                      opacity-0 group-hover:opacity-100 transition-opacity 
                                      pointer-events-none whitespace-nowrap">
-                      You'll be redirected to the live site!
+                      You'll be redirected to the project's website!
                     </span>
                   </div>
                 )}
