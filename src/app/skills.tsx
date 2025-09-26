@@ -20,23 +20,36 @@ const skills = [
 
 export default function LogoLoop() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen whitespace-nowrap py-10 bg-gradient-to-b from-blue-50 via-purple-50 to-pink-50 text-center">
-      <h2 className="text-3xl font-semibold text-center text-purple-950/50 mb-6">
+    <div className="flex flex-col items-center justify-center min-h-screen whitespace-nowrap py-10 bg-gradient-to-b from-pink-50 via-purple-50 to-blue-50 text-center">
+      {/* Heading with scroll animation */}
+      <motion.h2
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-3xl font-semibold text-center text-purple-950/50 mb-6"
+      >
         Skills & Technologies
-      </h2>
+      </motion.h2>
 
-      {/* Logo loop */}
-      <div className="relative w-full overflow-hidden py-10">
+      {/* Logo loop wrapper */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="relative w-full overflow-hidden py-10"
+      >
         <motion.div
           animate={{ x: ["0%", "-100%"] }}
           transition={{
             repeat: Infinity,
-            duration: 40, // Slower duration for smoother loop
+            duration: 40,
             ease: "linear",
           }}
           className="flex gap-20 justify-center items-center"
         >
-          {[...skills, ...skills].map((skill, i) => ( // Only duplicate once instead of three times
+          {[...skills, ...skills].map((skill, i) => (
             <motion.div
               key={i}
               className="group h-30 w-30 flex flex-col items-center justify-center rounded-full bg-white shadow-md shadow-purple-200 flex-shrink-0 mx-auto relative"
@@ -47,7 +60,11 @@ export default function LogoLoop() {
                 ease: "easeInOut",
               }}
             >
-              <img src={skill.logo} alt={skill.name} className="h-12 w-12 object-contain scale-130 filter brightness-90 contrast-100 opacity-90" />
+              <img
+                src={skill.logo}
+                alt={skill.name}
+                className="h-12 w-12 object-contain scale-130 filter brightness-90 contrast-100 opacity-90"
+              />
               <span className="absolute -bottom-8 text-sm text-purple-900/50 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                 {skill.name}
               </span>
@@ -55,10 +72,10 @@ export default function LogoLoop() {
           ))}
         </motion.div>
 
-        {/* Fade edges*/}
+        {/* Fade edges */}
         <div className="absolute top-0 left-0 h-full w-32 bg-gradient-to-r from-purple-50 to-transparent z-20 pointer-events-none" />
         <div className="absolute top-0 right-0 h-full w-32 bg-gradient-to-l from-purple-50 to-transparent z-20 pointer-events-none" />
-      </div>
+      </motion.div>
     </div>
   );
 }

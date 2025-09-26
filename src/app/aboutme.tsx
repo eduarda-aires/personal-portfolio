@@ -7,8 +7,10 @@ export default function AboutSection() {
     <section className="min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-50 via-purple-50 to-blue-50 text-gray-800">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
+        //animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
         className="max-w-4xl mx-auto bg-white/80 rounded-2xl p-10 shadow-md shadow-purple-200 text-center"
       >
         <h2 className="text-3xl font-semibold text-purple-950/50">About Me</h2>

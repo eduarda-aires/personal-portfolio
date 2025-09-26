@@ -2,7 +2,7 @@
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 px-6 bg-white/70 text-center">
+    <section id="contact" className="py-20 px-6 bg-white/70 rounded-2xl shadow-lg shadow-violet-200 text-center">
             <h2 className="text-3xl font-semibold text-purple-900/70">Let’s Connect!</h2>
             <p className="mt-4 text-gray-700">
             I’d love to chat over a virtual iced coffee ☕. 

@@ -7,7 +7,7 @@ export default function ProjectsSection() {
     {
       title: "🌸 Personal Portfolio",
       description:
-        "My cozy little corner - a portfolio website I built for myself. A fun project to showcase my skills and love for this field!",
+        "My cozy little corner - a website I built for myself, inspired by pastel themes. A fun project to showcase my skills and love for this field!",
       link: "https://github.com/eduarda-aires/personal-portfolio",
       technologies: "Next.js, Tailwind CSS, Framer Motion",
     },
@@ -36,8 +36,11 @@ export default function ProjectsSection() {
         <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, i) => (
             <motion.div
-              key={i}
-              whileHover={{ scale: 1.05 }}
+                key={i}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.2 }}
+                viewport={{ once: true, amount: 0.3 }}
               className="flex flex-col min-h-[350px] justify-between rounded-2xl bg-white p-6 shadow-md shadow-pink-200 text-left"
             >
               <h3 className="text-xl font-semibold text-pink-950/80">{project.title}</h3>
