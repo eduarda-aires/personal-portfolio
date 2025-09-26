@@ -23,13 +23,15 @@ export default function MusicButton() {
     setPlaying(!playing);
   };
 
+  const showOnIcon = hovered ? !playing : playing;
+
   return (
     <button
     onClick={togglePlay}
     className="fixed top-5 left-20 p-2"
     >
     <motion.img
-        src={hovered ? "/music-on.svg" : "/music-off.svg"}
+        src={showOnIcon ? "/music-on.svg" : "/music-off.svg"}
         alt="Music Note"
         className="w-10 h-10 cursor-pointer"
         style={{
