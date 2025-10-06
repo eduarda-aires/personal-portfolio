@@ -9,7 +9,7 @@ export default function ProjectsSection() {
       description:
         "My cozy little corner - a website I built for myself, inspired by pastel themes. A fun project to showcase my skills and love for this field!",
       link: "https://github.com/eduarda-aires/personal-portfolio",
-      technologies: "Next.js, Tailwind CSS, Framer Motion",
+      technologies: "Next.js, Tailwind CSS, TypeScript",
     },
     {
       title: "🌿 Ruralia",
@@ -25,7 +25,7 @@ export default function ProjectsSection() {
       description:
         "A web app I created to help me organize my cosplay projects a little better. It was my first time using React, and it helped me understand components and state management.",
       link: "https://github.com/eduarda-aires/cosplanner",
-      technologies: "React, CSS, HTML",
+      technologies: "React, CSS, HTML, JavaScript",
     },
   ];
 

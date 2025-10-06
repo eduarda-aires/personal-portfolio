@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import CatHover from "./catHover";
 import MusicButton from "./musicButton";
 import DarkModeToggle from "./nightMode";

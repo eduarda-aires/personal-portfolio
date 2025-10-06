@@ -19,12 +19,12 @@ export default function AboutSection() {
           particularly in creating interactive user experiences. 
           When I'm not coding, you can find me exploring new boba cafes, petting my cats, or indulging in my favorite games. 🎮
         </p>
-        <p className="mt-4 text-gray-700/80">
+        {/*<p className="mt-4 text-gray-700/80">
           If you'd like to know more about me, feel free to click the button below!
         </p>
-        <button className="mt-6 rounded-full bg-purple-200 px-4 py-2 text-purple-900/60 shadow-md hover:bg-purple-300 transition">
+         <button className="mt-6 rounded-full bg-purple-200 px-4 py-2 text-purple-900/60 shadow-md hover:bg-purple-300 transition">
           Tell me more! 
-        </button>
+        </button> */}
       </motion.div>
     </section>
   );

@@ -19,6 +19,12 @@ export default function DarkModeToggle() {
         onMouseLeave={() => setHovered(false)}
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       />
+      {/* Tooltip */}
+      {hovered && (
+        <span className="absolute top-16 -translate-y-1/2 px-3 py-1 rounded-lg bg-pink-100 text-sm text-purple-950/70 whitespace-nowrap shadow transition-opacity duration-200">
+          Feature coming soon! ✨
+        </span>
+      )}
     </div>
   );
 }
