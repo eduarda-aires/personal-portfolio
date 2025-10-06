@@ -12,7 +12,7 @@ export default function HeroSection() {
         whileHover={{ scale: 1.03 }}
         className="max-w-md mx-auto bg-white/80 rounded-2xl p-8 shadow-lg text-center"
       >
-        <h1 className="text-4xl font-bold text-purple-950/50">Hi, I'm Aires</h1>
+        <h1 className="text-4xl font-bold text-purple-950/50">Hi, I&apos;m Aires</h1>
         <p className="mt-2 text-gray-600">Frontend developer & cat enthusiast 🐈</p>
       </motion.div>
             <motion.p

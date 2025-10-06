@@ -15,9 +15,9 @@ export default function AboutSection() {
       >
         <h2 className="text-3xl font-semibold text-purple-950/50">About Me</h2>
         <p className="mt-4 text-gray-700/80">
-          I'm an aspiring Software Developer with a passion for front-end development,
+          I&apos;m an aspiring Software Developer with a passion for front-end development,
           particularly in creating interactive user experiences. 
-          When I'm not coding, you can find me exploring new boba cafes, petting my cats, or indulging in my favorite games. 🎮
+          When I am not coding, you can find me exploring new boba cafes, petting my cats, or indulging in my favorite games. 🎮
         </p>
         {/*<p className="mt-4 text-gray-700/80">
           If you'd like to know more about me, feel free to click the button below!

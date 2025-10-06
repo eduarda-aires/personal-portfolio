@@ -62,7 +62,7 @@ export default function ProjectsSection() {
                                    bg-pink-950/50 text-white text-xs rounded py-1 px-2 
                                    opacity-0 group-hover:opacity-100 transition-opacity 
                                    pointer-events-none whitespace-nowrap">
-                    You'll be redirected to GitHub!
+                    You will be redirected to GitHub!
                   </span>
                 </div>
 
@@ -79,7 +79,7 @@ export default function ProjectsSection() {
                                      bg-green-950/50 text-white text-xs rounded py-1 px-2 
                                      opacity-0 group-hover:opacity-100 transition-opacity 
                                      pointer-events-none whitespace-nowrap">
-                      You'll be redirected to the project's website!
+                      You will be redirected to the project&apos;s website!
                     </span>
                   </div>
                 )}

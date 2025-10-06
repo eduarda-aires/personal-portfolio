@@ -34,7 +34,6 @@ export default function PortfolioPage() {
 
     {/* Music Control Button */}
     <div className="fixed top-5 left-5">
-      {/* @ts-ignore */}
       <MusicButton />
     </div>
 
